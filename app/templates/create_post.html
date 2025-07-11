@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Create Post{% endblock %}
+{% block content %}
+<h2>Create Post</h2>
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  <div class="mb-3">
+    {{ form.title.label(class="form-label") }}
+    {{ form.title(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ form.content.label(class="form-label") }}
+    {{ form.content(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ form.image.label(class="form-label") }}
+    {{ form.image(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    {{ form.category.label(class="form-label") }}
+    {{ form.category(class="form-select") }}
+  </div>
+  <div class="mb-3">
+    {{ form.tags.label(class="form-label") }}
+    {{ form.tags(class="form-select", multiple=True) }}
+  </div>
+  <div class="mb-3">
+    {{ form.scheduled_publish.label(class="form-label") }}
+    {{ form.scheduled_publish(class="form-control") }}
+  </div>
+  {{ form.submit(class="btn btn-primary") }}
+</form>
+{% endblock %}
